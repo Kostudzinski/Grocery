@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    font-family: 'Over the Rainbow', cursive;
+}
+
+body {
+    background: #484b47;
+}
+
+/*SHOPPING_LIST*/
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/done-backgrounding.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 10px solid #303030;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 10px rgba(0,0,0, .5);
+    position: relative;
+    z-index: 10;
+}
+
+.main-header {
+    color: #fff1e6;
+    text-align: center;
+    font-size: 35px;
+}
+
+.add-items {
+    text-align: center;
+}
+
+.add-items>input {
+    width: 130px;
+    font-size: 15px;
+    font-family: 'Marcellus SC', serif;
+    background-color: #fff1e6;
+    outline-color: #303030;
+}
+
+button {
+    font-size: 15px;
+    color: #fff1e6;
+    background-color: #303030;
+    transition: .5s;
+    cursor: pointer;
+    font-family: 'Marcellus SC', serif;
+    outline-color: #fff1e6;
+
+}
+
+button:hover {
+    color: #303030;
+    background-color: #fff1e6;
+}
+
+.the-list {
+    width: 100%;
+    height: 70%;
+    background-image: url(../img/done-list.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.paper {
+    width: 385px;
+    height: 380px;
+    position: relative;
+    margin: auto;
+    top: 40px;
+    overflow: scroll;
+}
+
+.paper::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+
+.paper::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,0.5);
+}
+
+.grocery-title {
+    padding-top: 25px;
+    text-align: center;
+}
+
+.items-list-paper {
+    width: 80%;
+    font-size: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 0;
+    list-style: circle;
+    
+}
+
+.delete {
+    float: right;
+    animation: show 3.5s;
+    font-family: 'Marcellus SC', serif;
+
+}
+
+.list-item-paper {
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3s steps(40, end);
+}
+
+.place-order {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.order {
+    font-size: 20px;
+    transition: .5s;
+}
+
+/*FORM*/
+
+.form-container {
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url(../img/done-wood.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-bottom: 50px;
+}
+
+.user-form {
+    text-align: center;
+    padding-top: 50px;
+    transition: 1s;
+    opacity: 0;
+}
+
+.info-box {
+    height: 100px;
+}
+
+.error-message {
+    color: #ff4b4b;
+    font-family: 'Marcellus SC', serif;
+}
+
+.inputs, .select {
+    width: 200px;
+    outline-color: #303030;
+    box-shadow: 5px 5px 5px rgba(0,0,0, .5);
+}
+
+.info {
+    font-family: 'Marcellus SC', serif;
+    font-size: 16px;
+}
+
+.white {
+    color: #fff;
+}
+
+.show {
+    opacity: 1;
+}
+
+.saved {
+    color: #96ff63;
+    font-family: 'Marcellus SC', serif;
+}
+
+.save-button {
+    width: 75px;
+    background-color: #303030;
+    color: #fff;
+    font-family: 'Marcellus SC', serif;
+    outline-color: #fff1e6;
+    font-size: 16px;
+}
+
+.save-button:disabled {
+    opacity: .5;
+}
+
+.final-info {
+    padding-top: 20px;
+}
+
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes show {
+    0% {opacity: 0}
+    90% {opacity: 0}
+    100% {opacity: 1}
+}

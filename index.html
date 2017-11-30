@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping list</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css?family=Marcellus+SC|Over+the+Rainbow" rel="stylesheet">
+</head>
+
+<body ng-app="grocery" scroll ng-controller="groceryListCtrl">
+    <div class="background">
+        <h1 class="main-header">My shopping list:</h1>
+        <div class="add-items">
+            <input type="text" ng-keyup="onKeyup($event)" ng-model="newItem">
+            <button ng-click="addItem()">Add the item</button>
+        </div>
+
+        <div class="the-list">
+            <div class="paper">
+                <h2 class="grocery-title">{{groceries.length}} items to get</h2>
+                <ol class="items-list-paper">
+                    <li class="list-item-paper" ng-repeat="items in groceries">{{$index + 1}}. {{items.name}} <i class="delete" ng-click="removeItem()">x</i> </li>
+                </ol>
+            </div>
+        </div>
+        <div class="place-order">
+            <a href="#form" ng-click="showForm=true"><button class="order" ng-if="groceries.length > 0">Order</button></a>
+        </div>
+    </div>
+    <div ng-show="showForm" id="form" class="form-container" ng-controller="userCtrl">
+
+        <form class="user-form" name="userForm" ng-submit="saveUser(userInfo)">
+
+            <div class="info-box">
+
+                <label class="info white">First Name:</label><br>
+
+                <!-- Define that a value is required and it must be 2 characters in length or more -->
+                <input class="inputs info" type="text" name="fName" ng-model="userInfo.fName" ng-required="true" ng-minlength="2" /> <br>
+
+                <!-- check if the elements required field is true -->
+                <span class="error-message" ng-show="userForm.fName.$dirty
+                && userForm.fName.$error.required">Must Enter a First Name
+                </span>
+
+                <!-- Check if the element has been edited and whether it contains at least 2 characters -->
+                <span class="error-message" ng-show="userForm.fName.$dirty
+                && userForm.fName.$error.minlength">Must be a Minimum of 2 Characters</span>
+
+            </div>
+
+            <div class="info-box">
+
+                <label class="info white">Last Name:</label><br>
+
+                <input class="inputs info" type="text" name="lName" ng-model="userInfo.lName" ng-required="true" ng-minlength="2" /> <br>
+
+                <span class="error-message" ng-show="userForm.lName.$dirty
+                && userForm.lName.$error.required">Must Enter a Last Name
+                </span>
+
+                <span class="error-message" ng-show="userForm.lName.$dirty
+                && userForm.lName.$error.minlength">Must be a Minimum of 2 Characters</span>
+
+            </div>
+
+            <div class="info-box">
+
+                <label class="info white">Street:</label><br>
+
+                <input class="inputs info" type="text" name="street" ng-model="userInfo.street" ng-required="true" ng-minlength="6" /> <br>
+
+                <span class="error-message" ng-show="userForm.street.$dirty
+                && userForm.street.$invalid">Must Enter a Number, Street and Street Type (ex: 123 Main St)
+                </span>
+
+            </div>
+
+            <div class="info-box">
+
+                <label class="info white">Delivery Method:</label><br>
+
+                <select class="select info" name="delivery" ng-model="userInfo.delivery" ng-required="true">
+ 
+                      <option value="Personal">Personal collection</option>
+                      <option value="Delivery">Delivery</option>
+ 
+                </select>
+
+            </div>
+                <!-- Disable the button until every element in the form is valid -->
+                <input class="save-button" type="submit" value="Save" ng-disabled="userForm.$invalid" ng-click="saved=true" />
+
+            <div class="final-info">
+
+                <!-- Output new users -->
+                <span class="info white">
+                    {{ 'User: ' + userInfo.fName + " " + userInfo.lName + " " + userInfo.street + " " + userInfo.delivery}}
+            </span> <br>
+
+                <span class="saved" ng-show="saved">The order has been saved! <br> Thank you!</span>
+
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>

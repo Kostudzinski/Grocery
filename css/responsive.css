@@ -1,0 +1,69 @@
+@media screen and (min-width: 1500px) {
+    .info {
+        font-size: 25px;
+    }
+    
+    .user-form {
+        padding-top: 150px
+    }
+}
+
+
+@media screen and (min-width: 1300px) {
+    .info {
+        font-size: 20px;
+    }
+    
+    .paper {
+        width: 30%;
+        height: 80%;
+    }
+    
+    .user-form {
+        padding-top: 75px
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .paper {
+        width: 330px;
+        height: 355px;
+    }
+}
+
+@media screen and (max-height: 620px) {
+    .paper {
+        width: 330px;
+        height: 320px;
+    }
+    .grocery-title {
+        padding-top: 0px;
+    }
+}
+
+@media screen and (max-height: 550px) {
+    .paper {
+        width: 300px;
+        height: 290px;
+    }
+}
+
+@media screen and (max-height: 500px) {
+    .paper {
+        width: 250px;
+        height: 250px;
+    }
+    .place-order {
+        margin-top: 0;
+    }
+}
+@media screen and (max-height: 445px) {
+    .paper {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .the-list {
+        height: 65%;
+    }
+}
